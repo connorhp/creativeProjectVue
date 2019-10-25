@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Soccer Tables</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:green !important;">
+            <a class="navbar-brand" href="http://connorhp.com/creativeProject2" style="color: white !important">Soccer League Tables</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <button id="button" v-on:click="premierLeague">Premier League (England)</button>
+                    <button id="button" v-on:click="serieA">Serie A (Italy)</button>
+                    <button id="button" v-on:click="bundesliga">Bundesliga (Germany)</button>
+                    <button id="button" v-on:click="laLiga">La Liga (Spain)</button>
+                    <button id="button" v-on:click="ligue1">Ligue 1 (France)</button>
+                </div>
+            </div>
+        </nav>
+
+        <div v-if="loading">
+            <p>Loading...</p>
+        </div>
+        <div v-else>
+            <h1 id="whichtable"> {{competition.name}} </h1>
+            <div v-for="team in standings.table">
+                <div id = "table" v-if="display">
+                    {{team.position}}. <strong>{{team.team.name}}</strong> Points:<strong>{{team.points}}</strong> (W <strong>{{team.won}}</strong>, D <strong>{{team.draw}}</strong>, L <strong>{{team.lost}}</strong>)
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <a href="https://github.com/connorhp/creativeProjectVue">GitHub </a>
+        <p>Connor Pearce 2019 All Rights Reserved
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

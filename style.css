@@ -1,0 +1,46 @@
+button {
+    background-color: green !important;
+    border: none;
+    color: white !important;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#botton:hover {
+    font-weight: bold !important;
+    background-color: blue;
+
+}
+
+#whichtable,
+#table {
+    text-align: center;
+}
+
+ul {
+    color: white !important;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:focus {
+    color: white;
+    text-decoration: underline;
+}
